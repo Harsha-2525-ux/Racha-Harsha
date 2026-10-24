@@ -1,0 +1,11 @@
+# Netlify configuration for the Margly prototype (static SPA).
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+# Single-page-app fallback: every unknown path serves index.html so that
+# refreshing a nested route (e.g. /careers/ui-ux-designer) does not 404.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
